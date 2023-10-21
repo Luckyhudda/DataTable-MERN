@@ -216,7 +216,31 @@ const Table = () => {
             </tr>
           </tbody>
         </table>
-        
+        <div className=" bg-gray-950  text-white mt-0 m-5 mb-0 p-6 flex justify-between">
+          <div className="">
+            <h2>Showing 1 to 10 of 57 entries</h2>
+          </div>
+          <div className="flex  gap-3">
+            <button className="border border-gray-600 text-gray-600 p-2 pt-0 pb-0 rounded-md w-[55px]">
+              Pre
+            </button>
+            <button className="bg-gray-900 border border-gray-500 text-sm font-semibold p-2 pt-0 pb-0 rounded-md ">
+              1
+            </button>
+            <button className="bg-gray-900 border border-gray-500 text-sm font-semibold p-2 pt-0 pb-0 rounded-md ">
+              2
+            </button>
+            <button className="bg-gray-900 border border-gray-500 text-sm font-semibold p-2 pt-0 pb-0 rounded-md ">
+              3
+            </button>
+            <button className="bg-gray-900 border border-gray-500 text-sm font-semibold p-2 pt-0 pb-0 rounded-md ">
+              4
+            </button>
+            <button className="bg-gray-900 p-2 pt-0 pb-0 rounded-md w-[55px]">
+              Next
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
