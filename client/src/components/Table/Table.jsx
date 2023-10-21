@@ -29,7 +29,193 @@ const Table = () => {
             />
           </div>
         </div>
-       
+        <table className=" bg-gray-800 min-h-[500px] w-[800px] text-white mt-0 m-5  p-6 mb-0 ">
+          <thead className="bg-gray-950 rounded-lg h-[50px] border-gray-50">
+            <tr className="">
+              <th>Name </th>
+              <th>Position</th>
+              <th>Office</th>
+              <th>Age</th>
+              <th>Start date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Airi Satou
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Accountant
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Tokyo
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                33
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                28/11/2008
+              </td>
+            </tr>
+            <tr>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Airi Satou
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Accountant
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Tokyo
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                33
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                28/11/2008
+              </td>
+            </tr>
+            <tr>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Airi Satou
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Accountant
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Tokyo
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                33
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                28/11/2008
+              </td>
+            </tr>
+            <tr>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Airi Satou
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Accountant
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Tokyo
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                33
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                28/11/2008
+              </td>
+            </tr>
+            <tr>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Airi Satou
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Accountant
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Tokyo
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                33
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                28/11/2008
+              </td>
+            </tr>
+            <tr>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Airi Satou
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Accountant
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Tokyo
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                33
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                28/11/2008
+              </td>
+            </tr>
+
+            <tr>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Airi Satou
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Accountant
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Tokyo
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                33
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                28/11/2008
+              </td>
+            </tr>
+
+            <tr>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Airi Satou
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Accountant
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Tokyo
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                33
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                28/11/2008
+              </td>
+            </tr>
+
+            <tr>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Airi Satou
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Accountant
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Tokyo
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                33
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                28/11/2008
+              </td>
+            </tr>
+
+            <tr>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Airi Satou
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Accountant
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                Tokyo
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                33
+              </td>
+              <td className="border h-[40px] border-gray-500 text-center rounded-lg">
+                28/11/2008
+              </td>
+            </tr>
+          </tbody>
+        </table>
         
       </div>
     </div>
