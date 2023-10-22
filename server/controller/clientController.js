@@ -7,7 +7,7 @@ const ClientController = {
       .then((result) => {
         res.status(200).json({
           status: "Success",
-          Total_Clients: result.length,
+          total: result.length,
           clints: {
             result,
           },

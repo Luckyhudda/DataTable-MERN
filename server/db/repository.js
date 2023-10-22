@@ -3,7 +3,7 @@ const client = require("./clientModal");
 const repository = {
   GetClient: (queryParams) => {
     const queryObj = { ...queryParams };
-    const excludedField = ["sort", "limit"];
+    const excludedField = ["page", "sort", "limit"];
     excludedField.forEach((el) => delete queryObj[el]);
 
     let query = client.find(queryObj);
@@ -19,8 +19,8 @@ const repository = {
     query = query.sort(queryParams["sort"]);
 
     // Set limit for page....
-    const page = queryParams.page * 1 || 1;
-    const limit = queryParams.limit * 1 || 10;
+    const page = queryParams["page"] * 1 || 1;
+    const limit = queryParams["limit"] * 1 || 10;
     query = query.skip((page - 1) * limit).limit(limit);
 
     return query;
