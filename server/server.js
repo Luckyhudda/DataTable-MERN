@@ -1,20 +1,19 @@
-const dotenv = require('dotenv');
-const mongoose = require('mongoose');
+const dotenv = require("dotenv");
+const mongoose = require("mongoose");
 
-const app = require('./app');
-
+const app = require("./app");
 dotenv.config();
 
-mongoose.connect(process.env.MONGOURL).then(() =>{
-    console.log('server connected');
-}).catch(() =>{
-    console.log('Oooo... something went wrong in connection');
+mongoose
+  .connect(process.env.MONGOURL)
+  .then(() => {
+    console.log("server connected");
+  })
+  .catch(() => {
+    console.log("O-Hoooo 😖 something went wrong in connection");
+  });
+
+const port = 8902;
+app.listen(port, () => {
+  console.log("server start success-fully :)");
 });
-
-
-
-
-const port = 8900;
-app.listen(port, () =>{
-    console.log('server start success-fully :)');
-})
