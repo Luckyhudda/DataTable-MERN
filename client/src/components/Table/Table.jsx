@@ -7,17 +7,27 @@ const Table = () => {
   const [client, setClient] = useState([]);
   const [entries, setEntries] = useState("10");
   const [sort, setSort] = useState("1");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8902/clients?limit=${entries}&sort=${sort}`)
+      .get(
+        `http://localhost:8902/clients?limit=${entries}&sort=${sort}&page=${currentPage}`
+      )
       .then((response) => {
         setClient(response.data.clints.result);
+
+        const totalClients = Number(response.data.clints.total);
+        const totalPage = Math.ceil(totalClients / Number(entries));
+        setTotalPages(totalPage);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
-  }, [entries, sort]);
+  }, [currentPage, entries, sort]);
+
+  console.log(totalPages);
 
   const dataSorting = (e) => {
     if (sort == e) {
@@ -27,7 +37,13 @@ const Table = () => {
     }
   };
 
-  console.log(client);
+  const paginationHandler = (page) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
+    }
+  };
+
+  // console.log(client);
 
   const tableDataWrapper = client?.map((data, index) => (
     <tr key={index}>
@@ -118,22 +134,17 @@ const Table = () => {
             <h2>Showing 1 to {entries} of 100 entries</h2>
           </div>
           <div className="flex  gap-3">
-            <button className="border border-gray-600 text-gray-600 p-2 pt-0 pb-0 rounded-md w-[55px]">
+            <button
+              onClick={() => paginationHandler(currentPage - 1)}
+              className="border border-gray-600 text-gray-600 p-2 pt-0 pb-0 rounded-md w-[55px]"
+            >
               Pre
             </button>
-            <button className="bg-gray-900 border border-gray-500 text-sm font-semibold p-2 pt-0 pb-0 rounded-md ">
-              1
-            </button>
-            <button className="bg-gray-900 border border-gray-500 text-sm font-semibold p-2 pt-0 pb-0 rounded-md ">
-              2
-            </button>
-            <button className="bg-gray-900 border border-gray-500 text-sm font-semibold p-2 pt-0 pb-0 rounded-md ">
-              3
-            </button>
-            <button className="bg-gray-900 border border-gray-500 text-sm font-semibold p-2 pt-0 pb-0 rounded-md ">
-              4
-            </button>
-            <button className="bg-gray-900 p-2 pt-0 pb-0 rounded-md w-[55px]">
+
+            <button
+              onClick={() => paginationHandler(currentPage + 1)}
+              className="bg-gray-900 p-2 pt-0 pb-0 rounded-md w-[55px]"
+            >
               Next
             </button>
           </div>
