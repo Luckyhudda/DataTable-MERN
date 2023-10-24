@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { formatDate } from "../../service/date_formate";
+import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 
 const Table = () => {
   const [client, setClient] = useState([]);
@@ -10,6 +11,8 @@ const Table = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
 
+  let textColorClass = sort === "name" ? "text-gray-600" : "text-gray-700";
+
   useEffect(() => {
     axios
       .get(
@@ -17,9 +20,9 @@ const Table = () => {
       )
       .then((response) => {
         setClient(response.data.clints.result);
-
-        const totalClients = Number(response.data.clints.total);
-        const totalPage = Math.ceil(totalClients / Number(entries));
+        console.log(response.data.total);
+        //const totalClients = response.data.total;
+        const totalPage = Math.ceil(100 / +entries);
         setTotalPages(totalPage);
       })
       .catch((error) => {
@@ -27,7 +30,7 @@ const Table = () => {
       });
   }, [currentPage, entries, sort]);
 
-  console.log(totalPages);
+  // console.log(totalPages);
 
   const dataSorting = (e) => {
     if (sort == e) {
@@ -100,9 +103,15 @@ const Table = () => {
             <tr className="">
               <th
                 onClick={() => dataSorting("name")}
-                className="cursor-pointer"
+                className="relative cursor-pointer"
               >
                 Name{" "}
+                <span className={`absolute top-3 right-8 ${textColorClass}`}>
+                  <IoMdArrowDropup className={``} size={"1.5rem"} />
+                </span>
+                <span className="absolute top-5 right-8">
+                  <IoMdArrowDropdown size={"1.5rem"} />
+                </span>
               </th>
               <th
                 onClick={() => dataSorting("profession")}
@@ -136,14 +145,34 @@ const Table = () => {
           <div className="flex  gap-3">
             <button
               onClick={() => paginationHandler(currentPage - 1)}
-              className="border border-gray-600 text-gray-600 p-2 pt-0 pb-0 rounded-md w-[55px]"
+              className={`${
+                currentPage === 1
+                  ? "cursor-default bg-gray-700 text-gray-400"
+                  : "bg-gray-900 border border-gray-500"
+              } text-sm font-semibold p-2 pt-0 pb-0 rounded-md`}
             >
               Pre
             </button>
-
+            {Array.from({ length: totalPages }, (_, index) => (
+              <button
+                key={index}
+                onClick={() => paginationHandler(index + 1)}
+                className={`${
+                  currentPage === index + 1
+                    ? "pl-4 pr-4 bg-blue-800 text-white"
+                    : "bg-gray-800 border border-gray-500"
+                } text-sm font-semibold p-2 pt-0 pb-0 rounded-md`}
+              >
+                {index + 1}
+              </button>
+            ))}
             <button
               onClick={() => paginationHandler(currentPage + 1)}
-              className="bg-gray-900 p-2 pt-0 pb-0 rounded-md w-[55px]"
+              className={`${
+                currentPage === totalPages
+                  ? "cursor-default bg-gray-700 text-gray-400"
+                  : "bg-gray-900 border border-gray-500"
+              } text-sm font-semibold p-2 pt-0 pb-0 rounded-md`}
             >
               Next
             </button>
