@@ -10,10 +10,11 @@ const repository = {
 
     // // // Search query
     // const search = queryParams.search || "";
-    // console.log(typeof search);
+    // console.log(search);
     // const regex = new RegExp(search, "i");
+    // console.log(regex);
     // query = query.find({
-    //   $or: [{ city: regex }, { name: regex }],
+    //   $or: [{ city: { $regex: /^"Paris"/ } }, { name: { $regex: /^search/i } }],
     // });
 
     query = query.sort(queryParams["sort"]);
