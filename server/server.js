@@ -13,7 +13,7 @@ mongoose
     console.log("O-Hoooo 😖 something went wrong in connection");
   });
 
-const port = 8902;
+const port = process.env.PORT || 8902;
 app.listen(port, () => {
   console.log("server start success-fully :)");
 });
