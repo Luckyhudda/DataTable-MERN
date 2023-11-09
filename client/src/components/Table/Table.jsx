@@ -16,7 +16,7 @@ const Table = () => {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:8902/clients?limit=${entries}&sort=${sort}&page=${currentPage}`
+        `http://localhost:8900/clients?limit=${entries}&sort=${sort}&page=${currentPage}`
       )
       .then((response) => {
         setClient(response.data.clints.result);

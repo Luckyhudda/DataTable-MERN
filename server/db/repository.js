@@ -9,13 +9,13 @@ const repository = {
     let query = client.find(queryObj);
 
     // // // Search query
-    // const search = queryParams.search || "";
-    // console.log(search);
-    // const regex = new RegExp(search, "i");
-    // console.log(regex);
-    // query = query.find({
-    //   $or: [{ city: { $regex: /^"Paris"/ } }, { name: { $regex: /^search/i } }],
-    // });
+    const search = queryParams.search || "";
+    console.log(search);
+    const regex = new RegExp(search, "i");
+    console.log(regex);
+    query = query.find({
+      $or: [{ city: { $regex: regex } }, { name: { $regex: regex } }],
+    });
 
     query = query.sort(queryParams["sort"]);
 
